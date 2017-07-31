@@ -1,5 +1,5 @@
 # rollbackjs
-
+```javascript
 async = require('async');
 rollback = require('./modules/util/rollback')(async);
 
@@ -39,3 +39,4 @@ rollback.parallel([{
 }], (err, data) => {
     console.log("final", err, data);
 });
+```
