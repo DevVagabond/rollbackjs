@@ -19,11 +19,7 @@ class Rollback {
                 callback(null, result);
             }
         });
-
-
     };
 };
 
-module.exports = (async) => {
-    return new Rollback(async);
-}
+module.exports = async => new Rollback(async);
