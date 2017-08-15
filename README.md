@@ -1,14 +1,13 @@
 # rollbackjs
----
-
-
+rollback.js is a javascript library to rollback the processes.
 ### parallel : 
 ***
-
+You can execute your transaction and rollback methods parallely.
+That means neither transaction nor the rollback methods are dependent on each other. This method is faster than other methods in rollback.
 
 ```javascript
-async = require('async');
-rollback = require('./modules/util/rollback')(async);
+var async = require('async');
+var rollback = require('rollback')(async);
 
 var x, y, z;
 x = 10;

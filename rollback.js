@@ -4,11 +4,9 @@ class Rollback {
     this.async = async;
   }
   makeIifeStack(rollbackStack, result) {
-    var iifeStack = [];
-    iifeStack = rollbackStack.map(
+    return rollbackStack.map(
       (rb, i) => !!result[i] ? cb => rb(result[i], (e, r) => !!e ? cb(e) : cb(null, r)) : cb => cb(null, false)
     );
-    return iifeStack;
   }
   parallel(functionPipeline, callback) {
     var transactionStack = functionPipeline.map(pipeLine => pipeLine.transaction);
